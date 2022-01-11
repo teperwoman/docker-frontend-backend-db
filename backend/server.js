@@ -8,7 +8,6 @@ main().catch((err) => console.log(err));
 
 async function main() {
   await mongoose.connect("mongodb://mayadb:mayapass@mongodb.mongodb:27017/todos", {
-    useUnifiedTopology: true,
     useNewUrlParser: true,
   });
   const app = express();
