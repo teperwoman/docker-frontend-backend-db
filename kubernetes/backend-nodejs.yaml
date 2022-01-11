@@ -8,22 +8,22 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-nodjs-db
+  name: backend-nodejs-db
   labels:
-    app: backend-nodjs-db
+    app: backend-nodejs-db
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: backend-nodjs-db
+      app: backend-nodejs-db
   template:
     metadata:
       labels:
-        app: backend-nodjs-db
+        app: backend-nodejs-db
     spec:
       containers:
       - name: backend-nodjs-db
-        image: tftest/backend-nodjs-db:latest
+        image: tftest/backend-nodejs-db:latest
         ports:
         - containerPort: 3001
 
@@ -32,13 +32,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend-nodjs-db
+  name: backend-nodejs-db
   labels:
-    name: backend-nodjs-db
+    name: backend-nodejs-db
 spec:
   ports:
   - port: 3001
     targetPort: 3001
   clusterIP: None
   selector:
-    app: backend-nodjs-db
+    app: backend-nodejs-db
